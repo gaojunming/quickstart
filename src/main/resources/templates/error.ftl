@@ -6,6 +6,6 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-error!
+自定义的错误页面
 </body>
 </html>

@@ -14,26 +14,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import cn.bugcatch.quickstart.entity.MyEntity;
+import cn.bugcatch.quickstart.pojo.XmlTestPojo;
+
 @Controller//Rest
 public class BaseController {
+	@Autowired
+	private MyEntity me;
 	@Value("${name}")
 	private String name;
-	@Autowired
-	private FreeMarkerAutoConfiguration fmac;
-	@RequestMapping("/test")
+	@RequestMapping("/xmlTest")
 	@ResponseBody
-    String home() {
-        return "hello "+name;
+	XmlTestPojo xmlTest() {
+		System.err.println(name);
+        return new XmlTestPojo();
     }
-	/*@RequestMapping("/index")
+	@RequestMapping("/")
     String index() {
-        //return "index";
-		return "{\"hi\":\"gao\"}";
-    }*/
-	@RequestMapping("/run")
-    String index() {
-		System.err.println(fmac);
-        return "ftl/index";
+		System.err.println("index");
+		me.query();
+		return "index";
+    }
+	@RequestMapping("/test")
+    String test() {
+        return "test";
     }
 	@RequestMapping(value="/verify",method=RequestMethod.GET)
     String verify(@RequestParam Map<String,Object> params) {
