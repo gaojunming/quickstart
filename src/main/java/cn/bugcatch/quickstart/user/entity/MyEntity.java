@@ -1,4 +1,4 @@
-package cn.bugcatch.quickstart.entity;
+package cn.bugcatch.quickstart.user.entity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

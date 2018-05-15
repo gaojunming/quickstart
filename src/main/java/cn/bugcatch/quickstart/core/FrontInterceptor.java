@@ -1,4 +1,4 @@
-package cn.bugcatch.quickstart.interceptor;
+package cn.bugcatch.quickstart.core;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

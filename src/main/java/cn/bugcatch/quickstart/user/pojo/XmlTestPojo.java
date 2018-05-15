@@ -1,4 +1,4 @@
-package cn.bugcatch.quickstart.pojo;
+package cn.bugcatch.quickstart.user.pojo;
 
 public class XmlTestPojo {
 	public String name="gaojunming";

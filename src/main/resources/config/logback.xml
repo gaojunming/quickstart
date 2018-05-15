@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 使用springboot提供的默认基本配置,win系统下日志文件目录在(java.io.tmpdir) C:\Users\ADMINI~1\AppData\Local\Temp\ -->
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	<!-- <logger name="org.springframework" level="DEBUG"/>-->
+	<logger name="org.springframework.web" level="DEBUG"/>
+	<!-- 输出数据访问对象(dao)的操作日志 -->
+	<logger name="cn.bugcatch.quickstart.dao" level="DEBUG"/>
+</configuration>

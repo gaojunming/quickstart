@@ -1,4 +1,4 @@
-package cn.bugcatch.quickstart.web;
+package cn.bugcatch.quickstart.core;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.bugcatch.quickstart.entity.MyEntity;
-import cn.bugcatch.quickstart.pojo.XmlTestPojo;
+import cn.bugcatch.quickstart.user.entity.MyEntity;
+import cn.bugcatch.quickstart.user.pojo.XmlTestPojo;
 
 @Controller//Rest
-public class BaseController {
+public class HomeController {
 	@Autowired
 	private MyEntity me;
 	@Value("${name}")

@@ -1,4 +1,4 @@
-package cn.bugcatch.quickstart.context;
+package cn.bugcatch.quickstart.core;
 
 import java.util.Collections;
 import java.util.List;
@@ -32,10 +32,10 @@ import org.springframework.web.servlet.ModelAndView;
 * @describe
 */
 @Component
-public class ExtendBasicErrorController extends BasicErrorController{
+public class MyBasicErrorController extends BasicErrorController{
 
 	//构造器注入参数
-	public ExtendBasicErrorController(ErrorAttributes errorAttributes,ServerProperties serverProperties,
+	public MyBasicErrorController(ErrorAttributes errorAttributes,ServerProperties serverProperties,
 			ObjectProvider<List<ErrorViewResolver>> errorViewResolversProvider) {
 		super(errorAttributes, serverProperties.getError(), errorViewResolversProvider.getIfAvailable());
 	}
