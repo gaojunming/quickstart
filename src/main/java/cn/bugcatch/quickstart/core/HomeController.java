@@ -39,6 +39,10 @@ public class HomeController {
     String test() {
         return "test";
     }
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public String view() {
+		return "test2";
+	}
 	@RequestMapping(value="/verify",method=RequestMethod.GET)
     String verify(@RequestParam Map<String,Object> params) {
 		System.out.println();
