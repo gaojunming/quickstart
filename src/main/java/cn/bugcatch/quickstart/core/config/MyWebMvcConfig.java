@@ -1,9 +1,13 @@
 package cn.bugcatch.quickstart.core.config;
 
+import java.util.Date;
+import java.util.EnumSet;
+
+import javax.servlet.DispatcherType;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration.Dynamic;
 
+import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,8 +15,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -44,8 +50,12 @@ public class MyWebMvcConfig extends WebMvcConfigurerAdapter{
     	return new ServletContextInitializer() {
 			@Override
 			public void onStartup(ServletContext servletContext) throws ServletException {
-				Dynamic dyn= servletContext.addServlet("myser", MyServlet.class);
+				
+				javax.servlet.ServletRegistration.Dynamic dyn= servletContext.addServlet("myser", MyServlet.class);
 				dyn.addMapping("/hello");
+				
+				javax.servlet.FilterRegistration.Dynamic dyn2= servletContext.addFilter("HiddenHttpMethodFilter", HiddenHttpMethodFilter.class);
+				dyn2.addMappingForServletNames(EnumSet.allOf(DispatcherType.class), false, "dispatcherServlet");//使用dispatcherServlet默认名称
 			}
 		};
     }

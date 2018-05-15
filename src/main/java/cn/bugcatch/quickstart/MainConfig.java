@@ -17,7 +17,7 @@ import org.springframework.context.annotation.ImportResource;
 
 /**
  * 主配置类
- * @author Administrator
+ * @author gao
  *
  */
 //@Configuration//springboot文档上有这么一句话：通常定义了main方法的类也是使用@Configuration注解的一个很好的替补,所以这里就不需要了

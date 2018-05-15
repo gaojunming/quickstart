@@ -5,3 +5,7 @@ mvn package	给项目打jar包
 java -jar xxx.jar	执行java程序
 
 目前项目配置支持thymeleaf和freemarker两种模板引擎，默认情况下freemarker和thymeleaf模板视图解析器的顺序是相同的，但是freemarker先于thymeleaf加入到视图解析器链中，所以在模板同名的情况下freemarker会优先于thymeleaf被使用，此顺序可通过配置文件修改顺序
+
+待处理：
+	文件上传
+	日期时间转换器
