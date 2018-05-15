@@ -2,6 +2,8 @@ package cn.bugcatch.quickstart.user.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import cn.bugcatch.quickstart.core.DateJsonDeserializer;
@@ -9,6 +11,7 @@ import cn.bugcatch.quickstart.core.DateJsonDeserializer;
 public class XmlTestPojo {
 	public String name="gaojunming";
 	public Integer age=25;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public Date date;
 	public String getName() {
 		return name;
