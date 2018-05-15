@@ -1,4 +1,4 @@
-mvn spring-boot:run 启动项目 
+mvn spring-boot:run 启动项目 	eclipse中debug时不要使用 ，否则看不到框架源码。推荐在main方法中执行debug
 
 mvn package	给项目打jar包 
 
