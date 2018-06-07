@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,10 @@ public class UserRestController {
 	@RequestMapping(value="/ttt", method=RequestMethod.PATCH)
 	public void ttt(XmlTestPojo vvv) {//Long[] vvv) {//@RequestBody XmlTestPojo vvv
 		System.err.println(vvv);
+	}
+	@RequestMapping(value="/ttt2", method=RequestMethod.GET)
+	public void ttt2(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date date) {
+		System.err.println(date);
 	}
 	//@RequestMapping(value="/{user}", method=RequestMethod.DELETE)
 	//public User deleteUser(@PathVariable Long user) {

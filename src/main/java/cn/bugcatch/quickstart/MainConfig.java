@@ -42,19 +42,19 @@ public class MainConfig implements  CommandLineRunner, DisposableBean{
     	System.out.println(cac);
     	String[] beanNames =  cac.getBeanDefinitionNames();
 
-    	System.out.println("所以beanNames个数："+beanNames.length);
-
+    	System.out.println("所有beanNames个数："+beanNames.length);
+/*
     	for(String bn:beanNames){
 	    	System.out.println("class: "+cac.getBean(bn).getClass());
 	        System.out.println(bn);
-	    }
+	    }*/
     	//System.out.println(new File("/tmp/spring.log").getAbsolutePath());
     	/*Map<String, String> map = System.getenv();
         for(Iterator<String> itr = map.keySet().iterator();itr.hasNext();){
             String key = itr.next();
             System.out.println(key + "=" + map.get(key));
-        }   */
-        System.getProperty("java.io.tmpdir");
+        }  
+        System.getProperty("java.io.tmpdir"); */
     }
     
     /**
